@@ -11,6 +11,7 @@ public class Main {
         monthly_pay = new BigDecimal(monthly_pay).setScale(2, RoundingMode.UP).doubleValue();
         double ostatok=sum;
         int i=0;
+        System.out.println("Месяц |"+" Ежемесячный платеж |"  + " Основной долг |"+" Долг по процентам |"+" Остаток основного долга " );
         while (ostatok>0){
             i++;
             double interest_debt=sum*interest_rate;
@@ -22,8 +23,7 @@ public class Main {
             interest_debt = new BigDecimal(interest_debt).setScale(2, RoundingMode.UP).doubleValue();
             principal_debt = new BigDecimal(principal_debt).setScale(2, RoundingMode.UP).doubleValue();
             ostatok = new BigDecimal(ostatok).setScale(2, RoundingMode.UP).doubleValue();
-            System.out.println("Месяц"+" "+"Платеж" +" " + "Основной долг"+" "+"Долг"+" " +"Остаток" );
-            System.out.println(i+"      " + monthly_pay+"   "+ principal_debt +"  " + interest_debt+"  " + ostatok);
+            System.out.println(i+" | " + monthly_pay+" | "+ principal_debt +" |  " + interest_debt+" | " + ostatok);
         }
     }
 
@@ -38,3 +38,4 @@ public class Main {
         Annuity(sum,percent, month);
     }
 }
+
